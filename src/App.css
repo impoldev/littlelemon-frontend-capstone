@@ -1,38 +1,302 @@
-.App {
-  text-align: center;
+* {
+  color: #333333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 { font-size: 64pt }
+h2 { font-size: 40pt }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Markazi Text", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: "Karla", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body, ul > li, footer > section > h3 {
+  margin: auto;
+}
+
+ul > li { font-size: 16pt; font-weight: 900; }
+
+button {
+  background-color: #f4ce14;
+  border-radius: 16px;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 18pt;
+}
+
+/* HEADER */
+
+.mobile {
+  display: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1024px;
+  align-items: center;
+  padding: 20px 30px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+header > nav > ul {
+  display: flex;
+  gap: 47px;
+  list-style: none;
+}
+
+header a {
+  text-decoration: none;
+  color: #495e57;
+  transition: 0.3s;
+}
+
+header a:hover {
+  color: #2c3834;
+}
+
+/* HERO */
+
+.hero {
+  background-color: #495e57;
+  display: flex;
+  margin-bottom: 60px;
+}
+
+.hero > div {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1024px;
+  gap: 90px;
+  margin: auto;
+}
+
+.hero h1 {
+  margin: 0;
+  color: #f4ce14;
+}
+
+.hero h2 {
+  margin: -20px 0 0 0;
+  color: white
+}
+
+.hero > div > div {
+  max-width: 1024px;
+  margin: auto;
+  color: white;
+  padding: 25px 0 45px 0;
+}
+
+.hero > div > div > p {
+  max-width: 290px;
+  color: white;
+  font-size: 16pt;
+  line-height: 1.5;
+}
+
+.hero img {
+  border-radius: 16px;
+  object-fit: contain;
+  width: 560px;
+  top: 60px;
+  position: relative;
+}
+
+/* WEEKS SPECIALS */
+
+.weeks-specials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1024px;
+  margin: auto;
+  padding: 40px 30px;
+}
+
+.weeks-specials h2 {
+  margin: 0;
+  font-size: 40pt;
+}
+
+/* CARDS */
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1024px;
+  margin: auto auto 40px auto;
+  flex-wrap: wrap;
+  padding: 0 30px 0 30px;
+  gap: 30px;
+}
+
+.cards > div {
+  flex-basis: 250px;
+}
+
+.cards h3 {
+  margin: 0;
+}
+
+.cards div {
   display: flex;
   flex-direction: column;
+  background-color: #edefee;
+  align-self: normal;
+  border-radius: 16px;
+  gap: 25px;
+}
+
+.cards > div > img {
+  height: 199px;
+  object-fit: cover;
+  width: 300px;
+  border-radius: 16px 16px 0 0;
+}
+
+.cards .heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 0 30px 0 30px;
+  font-size: 18pt;
+  font-weight: bold;
+}
+
+.cards .price {
+  color: #ee9972;
+  font-size: 16pt;
+}
+
+.cards p {
+  padding: 0 30px 0 30px;
+  font-size: 16pt;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cards button {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  background-color: transparent;
+  gap: 10px;
+  padding: 0 30px 30px 30px;
+  font-size: 16pt;
+  margin-top: auto;
+}
+
+/* FOOTER */
+
+footer {
+  background-color: #495e57;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+footer > div {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1024px;
+  margin: auto;
+  padding: 40px 30px 24px 30px;
+  flex-wrap: wrap;
+  gap: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+footer a, footer h3 {
+  font-size: 16pt;
+  font-weight: normal;
+  color: white;
+  margin-top: 0;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer nav > ul, footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+footer img {
+  width: 107px;
+  height: 100%;
+  margin-top: 10px;
+}
+
+@media (max-width: 1080px) {
+  .desktop {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  .mobile {
+    display: block;
+    position: relative;
+  }
+
+  .submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: absolute;
+    list-style: none;
+    top: 61px;
+    right: -30px;
+    background-color: #ee9972;
+    padding: 50px;
+    z-index: 999;
+    border-radius: 0 0 0 16px;
+    border-left: 5px solid #edefee;
+    border-bottom: 5px solid #edefee;
+  }
+
+  .submenu a {
+    color: #333333;
+    font-size: 16pt;
+    font-weight: 900;
+  }
+
+  .submenu a:hover {
+    color: #333333;
+  }
+
+  .hero img {
+    max-width: -webkit-fill-available;
+    width: 100%;
+    margin: 0 40px;
+  }
+
+  .hero > div {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .hero > div > div {
+    padding: 25px 0 0 0;
+    margin: 0 40px;
+  }
+
+  .hero > div > div > p {
+    max-width: 100%;
+  }
+
+  .cards {
+    justify-content: center;
   }
 }
