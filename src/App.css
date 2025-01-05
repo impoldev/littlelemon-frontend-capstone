@@ -17,6 +17,8 @@ body {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  font-size: 16pt;
+  line-height: 1.5;
 }
 
 body, ul > li, footer > section > h3 {
@@ -37,7 +39,9 @@ button {
 /* HEADER */
 
 .mobile {
+  cursor: pointer;
   display: none;
+  margin-top: 8.98px;
 }
 
 header {
@@ -71,7 +75,7 @@ header a:hover {
 .hero {
   background-color: #495e57;
   display: flex;
-  margin-bottom: 60px;
+  margin-bottom: 55px;
 }
 
 .hero > div {
@@ -85,32 +89,31 @@ header a:hover {
 .hero h1 {
   margin: 0;
   color: #f4ce14;
+  line-height: 0.75;
 }
 
 .hero h2 {
-  margin: -20px 0 0 0;
-  color: white
+  color: white;
+  margin: 0;
 }
 
 .hero > div > div {
   max-width: 1024px;
   margin: auto;
   color: white;
-  padding: 25px 0 45px 0;
+  padding: 45px 0 45px 0;
 }
 
 .hero > div > div > p {
   max-width: 290px;
   color: white;
-  font-size: 16pt;
-  line-height: 1.5;
 }
 
 .hero img {
   border-radius: 16px;
   object-fit: contain;
   width: 560px;
-  top: 60px;
+  top: 55px;
   position: relative;
 }
 
@@ -137,7 +140,7 @@ header a:hover {
   justify-content: space-between;
   align-items: center;
   max-width: 1024px;
-  margin: auto auto 40px auto;
+  margin: auto auto 60px auto;
   flex-wrap: wrap;
   padding: 0 30px 0 30px;
   gap: 30px;
@@ -184,8 +187,6 @@ header a:hover {
 
 .cards p {
   padding: 0 30px 0 30px;
-  font-size: 16pt;
-  line-height: 1.5;
   margin: 0;
 }
 
@@ -238,6 +239,115 @@ footer img {
   width: 107px;
   height: 100%;
   margin-top: 10px;
+}
+
+/* TESTIMONIALS */
+
+.testimonials-container {
+  background-color: #fbdabb;
+  padding: 40px 0 60px 0;
+}
+
+.testimonials-container > h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.testimonials {
+  display: flex;
+  justify-content: center;
+  margin: auto 40px;
+  max-width: 1024px;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-self: center;
+}
+
+.testimonials h3 {
+  margin: 0;
+  line-height: 1;
+}
+
+.testimonials > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  justify-content: center;
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 16px;
+  max-width: 166px;
+}
+
+.person {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.person span {
+  font-weight: 900;
+}
+
+.person img {
+  border-radius: 16px;
+}
+
+.rating {
+  max-width: 70px;
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+}
+
+.testimonial {
+  margin-top: 20px;
+}
+
+/* ABOUT */
+
+.about {
+  display: flex;
+  max-width: 1024px;
+  margin: auto;
+  padding: 60px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.about h2 {
+  margin: 0;
+  line-height: 1;
+}
+
+.about h3 {
+  margin-top: 0;
+}
+
+.about > .text {
+  max-width: 50%;
+  align-content: center;
+}
+
+.about > .images {
+  width: 423px;
+  height: 450px;
+  position: relative;
+}
+
+.about > .images > img {
+  position: absolute;
+  height: 300px;
+  border-radius: 16px;
+}
+
+.about .one {
+  bottom: 0;
+}
+
+.about .two {
+  left: 160px;
+  bottom: 150px;
 }
 
 @media (max-width: 1080px) {
@@ -298,5 +408,50 @@ footer img {
 
   .cards {
     justify-content: center;
+  }
+
+  .about {
+    justify-content: center;
+  }
+
+  .about > .text {
+      max-width: 100%;
+      margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 590px) {
+  .about > .images {
+    width: 257px;
+    height: 300px;
+  }
+  
+  .about > .images > img {
+    height: 190px;
+  }
+  
+  .about .two {
+    left: 80px;
+    bottom: 110px;
+  }
+
+  .testimonials > div {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .about > .images {
+    width: 224px;
+    height: 275px;
+  }
+  
+  .about > .images > img {
+    height: 164px;
+  }
+  
+  .about .two {
+    left: 80px;
+    bottom: 110px;
   }
 }
