@@ -1,13 +1,20 @@
-import { useState } from 'react'
+import { useContext } from 'react'
 import '../../stylesheets/subcomponents/BookingForm.css'
+import { FormContext } from '../../App'
 
 export function BookingForm() {
-  const [date, setDate] = useState('')
-  const [time, setTime] = useState('17:00')
-  const [guests, setGuests] = useState('1')
-  const [occasion, setOccasion] = useState('Birthday')
-
-  const [availableTimes, setAvailableTimes] = useState(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'])
+  const {
+    date,
+    setDate,
+    time,
+    setTime,
+    guests,
+    setGuests,
+    occasion,
+    setOccasion,
+    availableTimes,
+    dispathAvailableTimes
+  } = useContext(FormContext)
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -19,7 +26,7 @@ export function BookingForm() {
     <label htmlFor="res-date">Choose date</label>
     <input onChange={(e) => setDate(e.target.value)} value={date} type="date" id="res-date" />
     <label htmlFor="res-time">Choose time</label>
-    <select onChange={(e) => setTime(e.target.value)} value={time} id="res-time ">
+    <select onChange={(e) => setTime(e.target.value)} value={time} id="res-time">
       {
         availableTimes.map(t => <option key={t}>{t}</option>)
       }
