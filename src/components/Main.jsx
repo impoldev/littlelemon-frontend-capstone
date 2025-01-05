@@ -135,9 +135,10 @@ export function Main() {
         <div className='text'>
           <h2>Little Lemon</h2>
           <h3>Chicago</h3>
-          <p>At Little Lemon, we believe that food is more than just nourishment—it’s an art form. 
-            Our talented chefs bring passion and creativity to every plate, combining fresh, seasonal ingredients with global influences. 
-            Whether you’re enjoying a cozy dinner with loved ones or celebrating a special occasion, we aim to make every moment memorable.</p>
+          <p>Located in Chicago's vibrant West Loop, Little Lemon is a cozy gem founded by childhood friends Mario and Adrian. 
+            Mario, a skilled chef with an Italian background, crafts delicious dishes inspired by Italy, while Adrian, 
+            an architect, designed its warm, rustic space. Together, they offer a blend of authentic flavors and inviting 
+            ambiance that makes every meal a special experience.</p>
         </div>
         <div className='images'>
           <img className='one' src={MarioAndAdrianB} alt="Mario and Adrian B"  />
