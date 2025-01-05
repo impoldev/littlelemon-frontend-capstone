@@ -13,7 +13,7 @@ export function Header() {
 
   return(
     <header>
-      <img src={Logo} alt='Little Lemon' width={200} />
+      <Link to={'/'}><img src={Logo} alt='Little Lemon' width={200} /></Link>
       <nav className='desktop'>
         <ul>
           <li><Link to='/'>Home</Link></li>
