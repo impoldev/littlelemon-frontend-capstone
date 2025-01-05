@@ -12,6 +12,7 @@ import T3 from '../assets/T3.jpg'
 import T4 from '../assets/T4.jpg'
 import MarioAndAdrianA from '../assets/Mario-and-Adrian-A.jpg'
 import MarioAndAdrianB from '../assets/Mario-and-Adrian-B.jpg'
+import '../stylesheets/Main.css'
 
 export function Main() {
   return(

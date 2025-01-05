@@ -1,0 +1,39 @@
+/* FOOTER */
+
+footer {
+  background-color: #495e57;
+  color: white;
+}
+
+footer > div {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1024px;
+  margin: auto;
+  padding: 40px 30px 24px 30px;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+footer a, footer h3 {
+  font-size: 16pt;
+  font-weight: normal;
+  color: white;
+  margin-top: 0;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer nav > ul, footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+footer img {
+  width: 107px;
+  height: 100%;
+  margin-top: 10px;
+}

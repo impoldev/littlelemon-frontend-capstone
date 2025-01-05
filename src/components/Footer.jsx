@@ -1,4 +1,5 @@
 import FooterLogo from '../assets/FooterLogo.png'
+import '../stylesheets/Footer.css'
 
 export function Footer() {
   return(
