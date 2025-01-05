@@ -15,16 +15,16 @@ footer > div {
   gap: 40px;
 }
 
-footer a, footer h3 {
-  font-size: 16pt;
-  font-weight: normal;
+footer h3 {
   color: white;
-  margin-top: 0;
+  margin: 0;
 }
 
 footer a {
   color: white;
   text-decoration: none;
+  font-size: 16pt;
+  font-weight: normal;
 }
 
 footer nav > ul, footer ul {
@@ -33,7 +33,7 @@ footer nav > ul, footer ul {
 }
 
 footer img {
-  width: 107px;
+  width: 133px;
   height: 100%;
   margin-top: 10px;
 }

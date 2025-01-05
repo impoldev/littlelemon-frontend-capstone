@@ -17,7 +17,6 @@ import '../stylesheets/Main.css'
 export function Main() {
   return(
     <main>
-
       <section className='hero'>
         <div>
           <div>
@@ -29,12 +28,10 @@ export function Main() {
           <img src={RestaurantFood} alt="restaurant food" />
         </div>
       </section>
-
       <section className='weeks-specials'>
         <h2>This weeks specials!</h2>
         <button>Online menu</button>
       </section>
-
       <section className='cards'>
         <div>
           <img src={GreekSalad} alt="greek salad" />
@@ -73,7 +70,6 @@ export function Main() {
           </button>
         </div>
       </section>
-
       <section className='testimonials-container'>
         <h2>Testimonials</h2>
         <div className='testimonials'>
@@ -135,7 +131,6 @@ export function Main() {
           </div>
         </div>
       </section>
-
       <section className='about'>
         <div className='text'>
           <h2>Little Lemon</h2>
@@ -149,7 +144,6 @@ export function Main() {
           <img className='two' src={MarioAndAdrianA} alt="Mario and Adrian A"  />
         </div>
       </section>
-
     </main>
   )
 }

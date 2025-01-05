@@ -23,10 +23,8 @@ export function Header() {
           <li><a href="#login">Login</a></li>
         </ul>
       </nav>
-
       <div className='mobile' onClick={handleMobileMenu}>
         <img src={Hamburger} alt="hamburger menu" />
-
         {
           submenu &&
           <div className='submenu'>
