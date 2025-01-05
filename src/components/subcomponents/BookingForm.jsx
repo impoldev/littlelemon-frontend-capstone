@@ -7,6 +7,8 @@ export function BookingForm() {
   const [guests, setGuests] = useState('1')
   const [occasion, setOccasion] = useState('Birthday')
 
+  const [availableTimes, setAvailableTimes] = useState(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'])
+
   function handleSubmit(e) {
     e.preventDefault()
     console.log(date, time, guests, occasion)
@@ -18,12 +20,9 @@ export function BookingForm() {
     <input onChange={(e) => setDate(e.target.value)} value={date} type="date" id="res-date" />
     <label htmlFor="res-time">Choose time</label>
     <select onChange={(e) => setTime(e.target.value)} value={time} id="res-time ">
-        <option>17:00</option>
-        <option>18:00</option>
-        <option>19:00</option>
-        <option>20:00</option>
-        <option>21:00</option>
-        <option>22:00</option>
+      {
+        availableTimes.map(t => <option key={t}>{t}</option>)
+      }
     </select>
     <label htmlFor="guests">Number of guests</label>
     <input onChange={(e) => setGuests(e.target.value)} value={guests} type="number" placeholder="1" min="1" max="10" id="guests" />
@@ -32,7 +31,7 @@ export function BookingForm() {
         <option>Birthday</option>
         <option>Anniversary</option>
     </select>
-    <input className='form-button' disabled={date === ''} type="submit" value="Make Your reservation" />
+    <input className='form-button' disabled={date === '' || (date < new Date().toISOString() && new Date().getDate() !== date.slice(date.length - 2) - 0)} type="submit" value="Make Your reservation" />
   </form>
   )
 }
