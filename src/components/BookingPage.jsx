@@ -1,13 +1,15 @@
 import '../stylesheets/BookingPage.css'
+import { BookingForm } from './subcomponents/BookingForm'
 
 export function BookingPage() {
   return(
     <main>
       <section className="heading">
-        <h1>Booking</h1>
+        <h1>Booking Online</h1>
       </section>
       <section className="body">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ad odit minima blanditiis, accusamus amet porro est placeat commodi soluta! Odit fugiat et adipisci beatae minima architecto magnam vel tenetur?</p>
+        <p>Submit this form to book your table. We hope to see you soon!</p>
+        <BookingForm />
       </section>
     </main>
   )

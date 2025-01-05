@@ -1,0 +1,40 @@
+form {
+  margin: 40px auto 5px auto;
+  padding: 30px 40px;
+  background-color: #edefee;
+  border-radius: 16px;
+}
+
+input, select {
+  font-family: "Karla", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+input:disabled{
+  background-color: #cccccc;
+  color: #666666;
+}
+
+input:disabled:hover{
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.form-button {
+  background-color: #f4ce14;
+  border-radius: 16px;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: .3s;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.form-button:hover {
+  background-color: #c0a20f;
+}
