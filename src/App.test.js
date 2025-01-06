@@ -136,6 +136,19 @@ test('BookingForm submit button is disabled when there is no date selected', () 
   expect(submitHelement.disabled).toBe(true)
 })
 
+test("can't select a date from the past", () => {
+  render(
+    <BrowserRouter>
+      <FormContext.Provider value={contextMockState}>
+        <BookingForm />
+      </FormContext.Provider>
+    </BrowserRouter>
+)
+
+  const guestsEelement = screen.getByLabelText('Choose date')
+  expect(guestsEelement.min).toBe(new Date().toISOString().slice(0, 10))
+})
+
 test("can't select less than 1 guest", () => {
   render(
     <BrowserRouter>
@@ -147,4 +160,17 @@ test("can't select less than 1 guest", () => {
 
   const guestsEelement = screen.getByLabelText('Number of guests')
   expect(guestsEelement.min).toBe('1')
+})
+
+test("BookingForm button has type 'submit'", () => {
+  render(
+    <BrowserRouter>
+      <FormContext.Provider value={contextMockState}>
+        <BookingForm />
+      </FormContext.Provider>
+    </BrowserRouter>
+)
+
+  const submitEelement = screen.getByText('Make your reservation')
+  expect(submitEelement.type).toBe('submit')
 })
