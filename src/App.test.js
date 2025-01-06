@@ -78,3 +78,8 @@ test('initializeTimes returns an array of more than one', () => {
   initializeTimes(mockCallback)
   expect(mockCallback.mock.calls[0][0].length).toBeGreaterThan(1)
 })
+
+test('Can write to and read from local storage', () => { 
+  localStorage.setItem('test', 'test1')
+  expect(localStorage.getItem('test')).toBe('test1')
+})
