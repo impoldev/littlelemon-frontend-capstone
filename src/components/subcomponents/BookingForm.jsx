@@ -28,7 +28,7 @@ export function BookingForm() {
       <span style={{backgroundColor: '#c53030', color: 'white', padding: '10px 10px', borderRadius: '16px'}}>No times available for this day</span>
     }
     {
-      !(availableTimes.length === 0) &&
+      (availableTimes.length !== 0 && date !== '') &&
       <>
         <table style={{backgroundColor:'white', borderRadius:'16px'}}>
           <thead>
@@ -57,7 +57,7 @@ export function BookingForm() {
         </select>
       </>
     }
-    <input className='form-button' disabled={availableTimes.length === 0} type="submit" value="Make your reservation" />
+    <input className='form-button' disabled={availableTimes.length === 0 || date === ''} type="submit" value="Make your reservation" />
   </form>
   )
 }
