@@ -57,7 +57,7 @@ export function BookingForm() {
         </select>
       </>
     }
-    <input className='form-button' disabled={availableTimes.length === 0 || date === ''} type="submit" value="Make your reservation" />
+    <input className='form-button' disabled={availableTimes.length === 0 || date === ''} aria-label='On Click' type="submit" value="Make your reservation" />
   </form>
   )
 }
