@@ -4,6 +4,7 @@ import { FormContext } from "./App.js";
 import { BookingForm } from './components/subcomponents/BookingForm.jsx';
 import { updateTimes, initializeTimes } from "./App.js";
 import { fetchAPI } from "./fetchFunctions.js";
+import { BrowserRouter } from "react-router";
 
 const contextMockState = {
   date: '2025-01-17',
@@ -16,8 +17,7 @@ const contextMockState = {
   setOccasion: () => {},
   availableTimes: ['17:00', '18:00'],
   dispathAvailableTimes: () => {},
-  success: false,
-  setSuccess: () => {}
+  submitForm: () => {}
 }
 
 test('TextEncoder is globally defined in Jest', () => {
@@ -34,9 +34,11 @@ test('TextDecoder decodes byte arrays', () => {
 test('Renders the BookingPage heading', () => {
 
     render(
-      <FormContext.Provider value={contextMockState}>
-        <BookingPage />
-      </FormContext.Provider>
+      <BrowserRouter>
+        <FormContext.Provider value={contextMockState}>
+          <BookingPage />
+        </FormContext.Provider>
+      </BrowserRouter>
     );
     const headingElement = screen.getByText("Book Now");
     expect(headingElement).toBeInTheDocument();
@@ -44,9 +46,11 @@ test('Renders the BookingPage heading', () => {
 
 test('Renders the BookingForm first label', () => {
     render(
+      <BrowserRouter>
       <FormContext.Provider value={contextMockState}>
-        <BookingForm />
-      </FormContext.Provider>
+          <BookingForm />
+        </FormContext.Provider>
+      </BrowserRouter>
     );
     const headingElement = screen.getByText("Choose date");
     expect(headingElement).toBeInTheDocument();
@@ -54,10 +58,12 @@ test('Renders the BookingForm first label', () => {
 
 test('BookingForm can be submitted', () => {
   render(
-    <FormContext.Provider value={contextMockState}>
-      <BookingForm />
-    </FormContext.Provider>
-  );
+    <BrowserRouter>
+      <FormContext.Provider value={contextMockState}>
+        <BookingForm />
+      </FormContext.Provider>
+    </BrowserRouter>  
+);
   const headingElement = screen.getByText("Make your reservation");
   expect(headingElement).toBeInTheDocument();
   expect(headingElement.type).toBe('submit')

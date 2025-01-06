@@ -1,0 +1,21 @@
+.heading {
+  text-align: center;
+  margin: auto;
+  background-color: #edefee;
+  padding: 20px 0;
+}
+
+.heading h1 {
+  margin: 0;
+}
+
+.body {
+  text-align: center;
+  margin: auto;
+  padding: 40px 0;
+  max-width: 1024px;
+}
+
+.body p {
+  margin: 0;
+}
