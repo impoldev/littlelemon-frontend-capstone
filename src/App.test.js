@@ -52,8 +52,8 @@ test('Renders the BookingForm first label', () => {
         </FormContext.Provider>
       </BrowserRouter>
     );
-    const headingElement = screen.getByText("Choose date");
-    expect(headingElement).toBeInTheDocument();
+    const formElement = screen.getByText("Choose date");
+    expect(formElement).toBeInTheDocument();
 })
 
 test('BookingForm can be submitted', () => {
@@ -62,11 +62,11 @@ test('BookingForm can be submitted', () => {
       <FormContext.Provider value={contextMockState}>
         <BookingForm />
       </FormContext.Provider>
-    </BrowserRouter>  
+    </BrowserRouter>
 );
-  const headingElement = screen.getByText("Make your reservation");
-  expect(headingElement).toBeInTheDocument();
-  expect(headingElement.type).toBe('submit')
+  const submitHelement = screen.getByText("Make your reservation");
+  expect(submitHelement).toBeInTheDocument();
+  expect(submitHelement.type).toBe('submit')
 })
 
 test('updateTimes returns the state after an action call', () => {
@@ -79,7 +79,33 @@ test('initializeTimes returns an array of more than one', () => {
   expect(mockCallback.mock.calls[0][0].length).toBeGreaterThan(1)
 })
 
-test('Can write to and read from local storage', () => { 
+test('Can write to and read from local storage', () => {
   localStorage.setItem('test', 'test1')
   expect(localStorage.getItem('test')).toBe('test1')
+})
+
+test('BookingForm submit button is enabled when there are times available for the selected day', () => {
+  render(
+    <BrowserRouter>
+      <FormContext.Provider value={contextMockState}>
+        <BookingForm />
+      </FormContext.Provider>
+    </BrowserRouter>
+)
+
+  const submitHelement = screen.getByText("Make your reservation")
+  expect(submitHelement.disabled).toBe(false)
+})
+
+test('BookingForm submit button is disabled when there are no times available for the selected day', () => {
+  render(
+    <BrowserRouter>
+      <FormContext.Provider value={{...contextMockState, availableTimes: []}}>
+        <BookingForm />
+      </FormContext.Provider>
+    </BrowserRouter>
+)
+
+  const submitHelement = screen.getByText("Make your reservation")
+  expect(submitHelement.disabled).not.toBe(false)
 })

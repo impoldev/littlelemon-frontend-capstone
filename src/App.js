@@ -45,9 +45,7 @@ function App() {
       occasion
     ]
 
-    let res = submitAPI(data)
-    console.log(res)
-
+    submitAPI(data)
     let curr = JSON.parse(localStorage.getItem(date)).filter(t => t !== time)
     localStorage.setItem(date, JSON.stringify(curr))
 
@@ -56,7 +54,6 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(date)
     if (!localStorage.getItem(date)) {
       initializeTimes(dispathAvailableTimes, date)
     } else {
