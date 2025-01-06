@@ -36,6 +36,17 @@ test('Renders the BookingForm first label', () => {
     expect(headingElement).toBeInTheDocument();
 })
 
+test('BookingForm can be submitted', () => {
+  render(
+    <FormContext.Provider value={{date: '2025-01-17', setDate: () => {}, time: '17:00', setTime: () => {}, guests: '1', setGuests: () => {}, occasion: 'Birthday', setOccasion: () => {}, availableTimes: ['17:00', '18:00'], dispathAvailableTimes: () => {}}}>
+      <BookingForm />
+    </FormContext.Provider>
+  );
+  const headingElement = screen.getByText("Make your reservation");
+  expect(headingElement).toBeInTheDocument();
+  expect(headingElement.type).toBe('submit')
+})
+
 test('updateTimes returns the state after an action call', () => {
   expect(updateTimes('', 'TEST')).toBe('TEST')
 })

@@ -38,7 +38,7 @@ export function BookingForm() {
         <option>Birthday</option>
         <option>Anniversary</option>
     </select>
-    <input className='form-button' disabled={date === '' || (date < new Date().toISOString() && new Date().getDate() !== date.slice(date.length - 2) - 0)} type="submit" value="Make Your reservation" />
+    <input className='form-button' disabled={date === '' || (date < new Date().toISOString() && new Date().getDate() !== date.slice(date.length - 2) - 0)} type="submit" value="Make your reservation" />
   </form>
   )
 }
