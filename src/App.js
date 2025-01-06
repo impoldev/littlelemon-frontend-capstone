@@ -12,11 +12,15 @@ import { createContext, useEffect, useReducer, useState } from 'react';
 
 export const FormContext = createContext(null)
 
-function updateTimes(state, action) {
+export function updateTimes(state, action) {
   if (action) {
     return action;
   }
   throw Error('Unknown action.');
+}
+
+export function initializeTimes(action) {
+  action(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'])
 }
 
 function App() {
@@ -26,13 +30,9 @@ function App() {
   const [occasion, setOccasion] = useState('Birthday')
   
   const [availableTimes, dispathAvailableTimes] = useReducer(updateTimes, []);
-  
-  useEffect(() => {
-    function initializeTimes() {
-      dispathAvailableTimes(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'])
-    }
 
-    return initializeTimes()
+  useEffect(() => {
+    return initializeTimes(dispathAvailableTimes)
   }, [])
 
   return (
