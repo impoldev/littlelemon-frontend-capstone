@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 import '../../stylesheets/subcomponents/BookingForm.css'
 import { FormContext } from '../../App'
+import { submitAPI } from '../../fetchFunctions'
 
 export function BookingForm() {
   const {
@@ -13,12 +14,33 @@ export function BookingForm() {
     occasion,
     setOccasion,
     availableTimes,
-    dispathAvailableTimes
+    success,
+    setSuccess
   } = useContext(FormContext)
+
+  function clearForm() {
+    setDate('')
+    setTime('17:00')
+    setGuests('1')
+    setOccasion('Birthday')
+
+    setTimeout(() => {
+      setSuccess(false)
+    }, 4000);
+  }
 
   function handleSubmit(e) {
     e.preventDefault()
-    console.log(date, time, guests, occasion)
+
+    let data = new FormData()
+    data.append('date', date)
+    data.append('time', time)
+    data.append('guests', guests)
+    data.append('occasion', occasion)
+
+    let res = submitAPI(data)
+    setSuccess(res)
+    clearForm()
   }
 
   return(
@@ -39,6 +61,10 @@ export function BookingForm() {
         <option>Anniversary</option>
     </select>
     <input className='form-button' disabled={date === '' || (date < new Date().toISOString() && new Date().getDate() !== date.slice(date.length - 2) - 0)} type="submit" value="Make your reservation" />
+    {
+      success &&
+      <span style={{color: 'white', backgroundColor: 'green', borderRadius: '16px', padding: '10px 20px', transition: '.3s ease-in-out'}}>Data submitted successfully</span>
+    }
   </form>
   )
 }

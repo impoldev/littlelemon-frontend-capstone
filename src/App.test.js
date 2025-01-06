@@ -3,6 +3,22 @@ import { BookingPage } from './components/BookingPage.jsx';
 import { FormContext } from "./App.js";
 import { BookingForm } from './components/subcomponents/BookingForm.jsx';
 import { updateTimes, initializeTimes } from "./App.js";
+import { fetchAPI } from "./fetchFunctions.js";
+
+const contextMockState = {
+  date: '2025-01-17',
+  setDate: () => {},
+  time: '17:00',
+  setTime: () => {},
+  guests: '1',
+  setGuests: () => {},
+  occasion: 'Birthday',
+  setOccasion: () => {},
+  availableTimes: ['17:00', '18:00'],
+  dispathAvailableTimes: () => {},
+  success: false,
+  setSuccess: () => {}
+}
 
 test('TextEncoder is globally defined in Jest', () => {
   expect(global.TextEncoder).toBeDefined();
@@ -18,7 +34,7 @@ test('TextDecoder decodes byte arrays', () => {
 test('Renders the BookingPage heading', () => {
 
     render(
-      <FormContext.Provider value={{date: '2025-01-17', setDate: () => {}, time: '17:00', setTime: () => {}, guests: '1', setGuests: () => {}, occasion: 'Birthday', setOccasion: () => {}, availableTimes: ['17:00', '18:00'], dispathAvailableTimes: () => {}}}>
+      <FormContext.Provider value={contextMockState}>
         <BookingPage />
       </FormContext.Provider>
     );
@@ -28,7 +44,7 @@ test('Renders the BookingPage heading', () => {
 
 test('Renders the BookingForm first label', () => {
     render(
-      <FormContext.Provider value={{date: '2025-01-17', setDate: () => {}, time: '17:00', setTime: () => {}, guests: '1', setGuests: () => {}, occasion: 'Birthday', setOccasion: () => {}, availableTimes: ['17:00', '18:00'], dispathAvailableTimes: () => {}}}>
+      <FormContext.Provider value={contextMockState}>
         <BookingForm />
       </FormContext.Provider>
     );
@@ -38,7 +54,7 @@ test('Renders the BookingForm first label', () => {
 
 test('BookingForm can be submitted', () => {
   render(
-    <FormContext.Provider value={{date: '2025-01-17', setDate: () => {}, time: '17:00', setTime: () => {}, guests: '1', setGuests: () => {}, occasion: 'Birthday', setOccasion: () => {}, availableTimes: ['17:00', '18:00'], dispathAvailableTimes: () => {}}}>
+    <FormContext.Provider value={contextMockState}>
       <BookingForm />
     </FormContext.Provider>
   );
@@ -51,8 +67,8 @@ test('updateTimes returns the state after an action call', () => {
   expect(updateTimes('', 'TEST')).toBe('TEST')
 })
 
-const mockCallback = jest.fn(x => x);
-test('initializeTimes calls argument function with fixed data', () => {
+const mockCallback = jest.fn(x => fetchAPI(new Date()));
+test('initializeTimes returns an array of more than one', () => {
   initializeTimes(mockCallback)
-  expect(JSON.stringify(mockCallback.mock.calls[0][0])).toBe(JSON.stringify(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00']))
+  expect(mockCallback.mock.calls[0][0].length).toBeGreaterThan(1)
 })

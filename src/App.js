@@ -9,6 +9,7 @@ import { MenuPage } from './components/MenuPage';
 import { OrdersPage } from './components/OrdersPage';
 import { LoginPage } from './components/LoginPage';
 import { createContext, useEffect, useReducer, useState } from 'react';
+import { fetchAPI } from './fetchFunctions';
 
 export const FormContext = createContext(null)
 
@@ -20,7 +21,7 @@ export function updateTimes(state, action) {
 }
 
 export function initializeTimes(action) {
-  action(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'])
+  action(fetchAPI(new Date()))
 }
 
 function App() {
@@ -28,7 +29,8 @@ function App() {
   const [time, setTime] = useState('17:00')
   const [guests, setGuests] = useState('1')
   const [occasion, setOccasion] = useState('Birthday')
-  
+  const [success, setSuccess] = useState(false)
+
   const [availableTimes, dispathAvailableTimes] = useReducer(updateTimes, []);
 
   useEffect(() => {
@@ -38,7 +40,7 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      <FormContext.Provider value={{date, setDate, time, setTime, guests, setGuests, occasion, setOccasion, availableTimes, dispathAvailableTimes}}>
+      <FormContext.Provider value={{date, setDate, time, setTime, guests, setGuests, occasion, setOccasion, availableTimes, dispathAvailableTimes, success, setSuccess}}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
