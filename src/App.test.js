@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { BookingPage } from './components/BookingPage.jsx';
 import { FormContext } from "./App.js";
+import { BookingForm } from './components/subcomponents/BookingForm.jsx';
 
 test('TextEncoder is globally defined in Jest', () => {
   expect(global.TextEncoder).toBeDefined();
@@ -13,7 +14,7 @@ test('TextDecoder decodes byte arrays', () => {
   expect(result).toBe('Test');
 });
 
-test('Renders the BookingForm heading', () => {
+test('Renders the BookingPage heading', () => {
 
     render(
       <FormContext.Provider value={{date: '2025-01-17', setDate: () => {}, time: '17:00', setTime: () => {}, guests: '1', setGuests: () => {}, occasion: 'Birthday', setOccasion: () => {}, availableTimes: ['17:00', '18:00'], dispathAvailableTimes: () => {}}}>
@@ -21,5 +22,16 @@ test('Renders the BookingForm heading', () => {
       </FormContext.Provider>
     );
     const headingElement = screen.getByText("Book Now");
+    expect(headingElement).toBeInTheDocument();
+})
+
+
+test('Renders the BookingForm first label', () => {
+    render(
+      <FormContext.Provider value={{date: '2025-01-17', setDate: () => {}, time: '17:00', setTime: () => {}, guests: '1', setGuests: () => {}, occasion: 'Birthday', setOccasion: () => {}, availableTimes: ['17:00', '18:00'], dispathAvailableTimes: () => {}}}>
+        <BookingForm />
+      </FormContext.Provider>
+    );
+    const headingElement = screen.getByText("Choose date");
     expect(headingElement).toBeInTheDocument();
 })
