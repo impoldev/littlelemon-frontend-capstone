@@ -33,7 +33,7 @@ git clone https://github.com/impoldev/little-lemon.git
 ### 2. Navigate into the project directory
 
 ```bash
-cd little-lemon-restaurant-booking
+cd little-lemon
 ```
 
 ### 3. Install dependencies
