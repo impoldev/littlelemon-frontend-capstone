@@ -13,10 +13,9 @@ import T4 from '../assets/T4.jpg'
 import MarioAndAdrianA from '../assets/Mario-and-Adrian-A.jpg'
 import MarioAndAdrianB from '../assets/Mario-and-Adrian-B.jpg'
 import '../stylesheets/HomePage.css'
-import { Link, useNavigate } from 'react-router'
+import { Link } from 'react-router'
 
 export function HomePage() {
-  const navigate = useNavigate()
 
   return(
     <main>
