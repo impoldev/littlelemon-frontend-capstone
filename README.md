@@ -1,4 +1,4 @@
-# Front-End Developer Capstone: Little Lemon Restaurant Booking System
+# Front-End Developer Capstone: Little Lemon Restaurant
 
 ## Project Overview
 
