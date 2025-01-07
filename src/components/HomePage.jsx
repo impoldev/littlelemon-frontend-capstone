@@ -13,8 +13,11 @@ import T4 from '../assets/T4.jpg'
 import MarioAndAdrianA from '../assets/Mario-and-Adrian-A.jpg'
 import MarioAndAdrianB from '../assets/Mario-and-Adrian-B.jpg'
 import '../stylesheets/HomePage.css'
+import { Link, useNavigate } from 'react-router'
 
 export function HomePage() {
+  const navigate = useNavigate()
+
   return(
     <main>
       <section className='hero'>
@@ -23,14 +26,14 @@ export function HomePage() {
             <h1>Little Lemon</h1>
             <h2>Chicago</h2>
             <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist</p>
-            <button>Reserve a table</button>
+            <Link className='button' to='booking'>Reserve a table</Link>
           </div>
           <img src={RestaurantFood} alt="restaurant food" />
         </div>
       </section>
       <section className='weeks-specials'>
         <h2>This weeks specials!</h2>
-        <button>Online menu</button>
+        <Link className='button' to='menu'>Online menu</Link>
       </section>
       <section className='cards'>
         <div>

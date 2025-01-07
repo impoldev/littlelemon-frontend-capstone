@@ -27,7 +27,7 @@ body, ul > li, footer > section > h3 {
 
 ul > li { font-size: 16pt; font-weight: 900; }
 
-button {
+button, .button {
   background-color: #f4ce14;
   border-radius: 16px;
   border: none;
@@ -36,8 +36,10 @@ button {
   font-size: 18pt;
   transition: .3s;
   cursor: pointer;
+  text-decoration: none;
 }
 
-button:hover {
+button:hover, .button:hover {
   background-color: #c0a20f;
+  text-decoration: none;
 }
