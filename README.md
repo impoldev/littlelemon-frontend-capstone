@@ -27,7 +27,7 @@ To run this project locally, follow the instructions below:
 ### 1. Clone this repository
 
 ```bash
-git clone https://github.com/impoldev/little-lemon.git
+git clone https://github.com/impoldev/littlelemon-frontend-capstone.git
 ```
 
 ### 2. Navigate into the project directory
